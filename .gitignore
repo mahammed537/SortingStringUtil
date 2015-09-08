@@ -1,0 +1,63 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+	/**
+	 * 
+	 */
+	package com.venturesity.codetest;
+	
+	import java.util.Arrays;
+	import java.util.Iterator;
+	import java.util.List;
+	import java.util.Scanner;
+	import java.util.Set;
+	import java.util.TreeSet;
+	
+	/**
+	 * @author srafi
+	 * Sep 8, 2015
+	 * StringSortingTest.java
+	 */
+	public class StringSortingTest {
+	
+		/**
+		 * @param args
+		 */
+		public static void main(String[] args) {
+			try
+			{
+			Scanner sc =new Scanner(System.in);
+			System.out.println("Please Enter the Length of Strings :");
+			int length = sc.nextInt();
+			String[] strArray = new String[length]; 
+			System.out.println("Please Enter the "+length+" Strings :");
+			for(int i =0 ; i<length; i++){
+				strArray[i] = sc.next();
+			}
+	
+			List<String> list = Arrays.asList(strArray);
+			Set<String> sortedSet = new TreeSet<String>(list);
+			System.out.println("Out put for given input :");
+			Iterator<String> itr = sortedSet.iterator();
+			System.out.println(itr.hasNext());
+			while(itr.hasNext()){
+				System.out.println(itr.next());
+			}
+			}
+			catch (Exception e) {
+				System.out.println("Please give the proper input");
+			}
+			
+		}
+	
+	}
